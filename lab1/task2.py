@@ -6,8 +6,8 @@ import time
 WIFI_SSID = "Robotic WIFI"
 WIFI_PASSWORD = "rbtWIFI@2025"
 
-BOT_TOKEN = "8581995886:AAGQdxkfjMsPULGzmehPmeApgPmqb8N6rgo"
-CHAT_ID = "-5172339964"
+BOT_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"
+CHAT_ID = "YOUR_TELEGRAM_CHAT_ID"
 
 # -------- WIFI --------
 wifi = network.WLAN(network.STA_IF)
