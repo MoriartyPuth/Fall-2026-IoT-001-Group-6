@@ -12,8 +12,8 @@ import urequests
 SSID = "Robotic WIFI"
 PASSWORD = "rbtWIFI@2025"
 
-BOT_TOKEN = "8832675081:AAH-x7eWUIC2vJ7IsghOvdvDHSFlYzxJOQ0"
-CHAT_ID = "-5365418173"
+BOT_TOKEN = ""
+CHAT_ID = ""
 
 URL_SEND = "https://api.telegram.org/bot{}/sendMessage".format(BOT_TOKEN)
 URL_UPDATES = "https://api.telegram.org/bot{}/getUpdates".format(BOT_TOKEN)
