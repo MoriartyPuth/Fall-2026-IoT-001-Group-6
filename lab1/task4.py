@@ -12,7 +12,7 @@ import urequests
 SSID = "Robotic WIFI"
 PASSWORD = "rbtWIFI@2025"
 
-BOT_TOKEN = ""
+BOT_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"
 CHAT_ID = ""
 
 URL_SEND = "https://api.telegram.org/bot{}/sendMessage".format(BOT_TOKEN)
