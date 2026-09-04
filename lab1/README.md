@@ -57,6 +57,8 @@ Read the DHT11 temperature and humidity every five seconds and print both values
 Implement the `send_telegram()` function and use the ESP32 to send a message to the Telegram group.
 
 ### Task 2 Evidence
+<img width="773" height="247" alt="Screenshot 2026-09-04 101950" src="https://github.com/user-attachments/assets/65914064-2081-4cbe-bce4-355f19634764" /> <img width="813" height="353" alt="Screenshot 2026-09-04 102035" src="https://github.com/user-attachments/assets/11548a9d-1813-4afe-b818-55c3f2ec2ca7" />
+
 
 ---
 
