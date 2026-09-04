@@ -101,7 +101,8 @@ The Telegram bot supports commands from the group:
 
 ## Task 5 — Documentation (30 points)
 
-This diagram illustrates the state machine and loop logic used in the firmware.
+This diagram illustrates the state machine and loop logic used in the firmware. Temp changed base on real life testing.
+
 
 <img width="805" height="631" alt="image" src="https://github.com/user-attachments/assets/ac089c9b-7403-4f13-8a51-08bf3bc5d8b7" />
 
@@ -112,5 +113,21 @@ This diagram illustrates the state machine and loop logic used in the firmware.
 |---|---|
 | `/temp` | Show current temperature and humidity |
 | `/on` | Turn the relay ON and stop high-temperature alerts |
+
+---
+
+### How to Set Up
+
+- Configure Credentials: Update each task.py (from Task2 to Task4) with your Wi-Fi SSID, Password, Telegram Token, and Chat ID.
+```
+WIFI_SSID = "YOUR_WIFI_NAME"
+WIFI_PASSWORD = "YOUR_WIFI_PASSWORD"
+
+BOT_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"
+CHAT_ID = "YOUR_TELEGRAM_BOT_CHAT_ID"
+```
+
+- Upload Files: Use Thonny to upload the code to the ESP32.
+- Run: Reset the board and monitor the serial output for connection status.
 
 ---
