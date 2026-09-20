@@ -19,3 +19,10 @@
 - Add a slider to the web page with a range from 0 to 180 degrees.
 - Moving the slider must change the servo angle.
 - Display the selected angle on the web page.
+
+## Task 4 : Custom Text to LCD
+- Add a textbox and a Send button to the web page.
+- Text entered by the user must appear on the LCD.
+- Text longer than 16 characters should scroll across the LCD.
+
+## Task 5 : Complete IoT Web Dashboard Integration
