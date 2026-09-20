@@ -30,3 +30,6 @@
 [Demonstration Video](https://drive.google.com/file/d/1vchWeqAW4byNCv86qdz0qE1DaCRj9tan/view?usp=sharing)
 
 ## Task 5 : Complete IoT Web Dashboard Integration
+- Integrate all features (sensor monitoring, LCD controls, servo motor, and custom text) into a single comprehensive dashboard.
+### Evidence:
+[Demonstration Video](https://drive.google.com/file/d/1t6sDnSvPP2zh5aZKCQgf9B9AIvpO-41c/view?usp=sharing)
