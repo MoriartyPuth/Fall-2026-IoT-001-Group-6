@@ -1,5 +1,32 @@
 # Lab 2 :  IoT Webserver with LED, Sensors, LCD, and Servo Control
 
+## Equipment
+- ESP32 Dev Board (MicroPython firmware flashed)
+- DHT11 sensor (temperature/humidity)
+- HC-SR04 ultrasonic distance sensor
+- LCD 16x2 with I2C backpack
+- SG90 servo motor
+- Breadboard and jumper wires
+- USB cable and laptop with Thonny
+- Wi-Fi access
+
+## Wiring
+
+<img width="735" height="375" alt="Screenshot 2026-09-20 185744" src="https://github.com/user-attachments/assets/f97133fe-8929-4423-86e1-3465e6ea1e45" />
+
+## Setup Instructions
+- Install MicroPython on the ESP32.
+- Upload all the prerequisite modules to the ESP32. You can find it in /esp32_module
+- Open Thonny IDE and import the file main.py
+- Edit Wi-Fi credentials in main.py:
+```
+ssid = "YOUR_WIFI_NAME"
+password = "YOUR_WIFI_PASSWORD"
+```
+- Reset the ESP32.
+- Check the Serial Monitor for the assigned IP address.
+- Open the IP address in a web browser.
+
 ## Task 1 : Sensor Monitoring 
 - Read temperature and humidity from the DHT11 sensor.
 - Measure distance using the HC-SR04 ultrasonic sensor.
@@ -30,6 +57,6 @@
 [Demonstration Video](https://drive.google.com/file/d/1vchWeqAW4byNCv86qdz0qE1DaCRj9tan/view?usp=sharing)
 
 ## Task 5 : Complete IoT Web Dashboard Integration
-- Integrate all features (sensor monitoring, LCD controls, servo motor, and custom text) into a single comprehensive dashboard.
+Integrate all features (sensor monitoring, LCD controls, servo motor, and custom text) into a single comprehensive dashboard.
 ### Evidence:
 [Demonstration Video](https://drive.google.com/file/d/1t6sDnSvPP2zh5aZKCQgf9B9AIvpO-41c/view?usp=sharing)
