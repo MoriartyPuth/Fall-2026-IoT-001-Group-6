@@ -26,15 +26,21 @@
 - Moving the slider must change the servo angle.
 - Display the selected angle in the Blynk app.
 
+### [Evidence](https://drive.google.com/file/d/1c1Wx28Jv6XwF2s1hnTsWy2VEQmLn2xPO/view?usp=sharing)
+
 ## Task 3 : Automatic IR Gate Operation
 - When an object is detected by the IR sensor, the servo must open the gate.
 - After a short delay, the servo returns to the closed position.
 - Trigger each opening once per new detection, not repeatedly while an object remains present.
 
+### [Evidence](https://drive.google.com/file/d/1cuRAaU5BvuY10YOzahROenOFIo-DNKQO/view?usp=sharing) 
+
 ## Task 4 : TM1637 Detection Counter
 - Count each new IR detection event.
 - Display the count on the TM1637 display.
 - Send the same count to a Blynk numeric display widget.
+
+### [Evidence](https://drive.google.com/file/d/1fiZfzvEib69NOkhfyYiUQ9rAc8yn10Sf/view?usp=sharing)
 
 ## Task 5 : Complete Smart Gate Integration
 - Combine all previous tasks into one ESP32 program and one Blynk dashboard.
@@ -43,3 +49,4 @@
 move the servo; use the Blynk slider instead.
 - Keep the IR status and detection counter visible on Blynk.
 
+### [Evidence](https://drive.google.com/file/d/1FsLOEQMsLBq2-ibRB9NIJdVcPi03uJv4/view?usp=sharing)
