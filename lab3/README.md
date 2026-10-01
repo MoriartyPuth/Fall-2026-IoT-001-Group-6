@@ -50,3 +50,29 @@ move the servo; use the Blynk slider instead.
 - Keep the IR status and detection counter visible on Blynk.
 
 ### [Evidence](https://drive.google.com/file/d/1FsLOEQMsLBq2-ibRB9NIJdVcPi03uJv4/view?usp=sharing)
+
+## Wi-Fi and Blynk Setup
+
+1. Set `WIFI_SSID`, `WIFI_PASS`, and `BLYNK_TOKEN` in the code.
+2. Connect the ESP32 to a 2.4 GHz Wi-Fi network.
+3. Use the token from your Blynk device.
+4. Create these datastreams and widgets on one dashboard:
+
+| Virtual Pin | Data Type | Widget | Function |
+|-------------|-----------|--------|----------|
+| V2 | String | Value Display | Shows Detected / Not Detected |
+| V3 | Integer, 0–180 | Slider | Selects the manual servo angle |
+| V4 | Integer, 0–9999 | Numeric Display | Shows the detection count |
+| V5 | Integer, 0–1 | Switch | Selects Automatic or Manual mode |
+| V6 | Integer, 0–180 | Numeric Display | Shows the commanded servo angle |
+
+## Using the Blynk Controls
+
+- **Mode switch (V5):** ON = Automatic; OFF = Manual.
+- **Servo slider (V3):** In Manual mode, move the slider to set the servo angle.
+- **Automatic mode:** A new IR detection opens the gate, which closes after two seconds.
+- **IR status (V2):** Shows whether an object is detected.
+- **Detection counter (V4):** Shows the same count as the TM1637.
+- **Servo angle (V6):** Shows the angle commanded by the ESP32.
+
+IR status and detection counting remain active in both modes.
