@@ -1,31 +1,38 @@
-flowchart TD
-    A([Power on ESP32]) --> B[Init I2C bus SDA=21 SCL=22<br/>ADC GPIO33, 11 dB, 12-bit]
-    B --> C[Init MLX90614, BMP280, DS3231<br/>missing sensor -> marked FAIL, keep running]
-    C --> D[Connect WiFi]
-    D --> E{WiFi up and<br/>NTP sync enabled?}
-    E -- yes --> F[Set DS3231 from NTP<br/>UTC + 7 h]
-    E -- no --> G
-    F --> G[Read MQ-5 raw ADC 0-4095]
-    G --> H[Append to buffer, keep last 5<br/>gas_avg = mean of buffer]
-    H --> I{gas_avg}
-    I -- "< 2100" --> I1[risk = SAFE, code 0]
-    I -- "2100 - 2599" --> I2[risk = WARNING, code 1]
-    I -- ">= 2600" --> I3[risk = DANGER, code 2]
-    I1 --> J
-    I2 --> J
-    I3 --> J[Read MLX90614 body_temp]
-    J --> K{body_temp >= 32.5 C?}
-    K -- yes --> K1[fever_flag = 1]
-    K -- no --> K0[fever_flag = 0]
-    K1 --> L
-    K0 --> L[Read BMP280 pressure hPa<br/>altitude = 44330 x 1 - P/1013.25 ^ 1/5.255]
-    L --> M[Read DS3231 -> ISO timestamp]
-    M --> N[Build JSON packet<br/>print raw vs avg to serial]
-    N --> O{WiFi connected?}
-    O -- no --> O1[Try reconnect,<br/>skip this send] --> T
-    O -- yes --> P[HTTP POST to Node-RED /lab4/data]
-    P --> Q[Node-RED: validate fields,<br/>DS3231 time as point time]
-    Q --> R[(InfluxDB 2<br/>bucket iot, measurement lab4)]
-    R --> S[Grafana dashboard<br/>refresh every 5 s]
-    P --> T[Wait 2 s]
-    T --> G
+flowchart TB
+    subgraph BOOT["1 - Boot (once)"]
+        direction LR
+        A([Power on ESP32]) --> B[Init I2C SDA=21 SCL=22<br/>ADC GPIO33, 11 dB, 12-bit]
+        B --> C[Init MLX90614, BMP280, DS3231<br/>missing sensor = FAIL, keep running]
+        C --> D[Connect WiFi]
+        D --> E{WiFi up and<br/>NTP sync on?}
+        E -- yes --> F[Set DS3231 from NTP<br/>UTC + 7 h]
+        E -- no --> F0[Keep DS3231 time]
+    end
+
+    subgraph EDGE["2 - Edge logic (every 2 s)"]
+        direction LR
+        G[Read MQ-5<br/>raw ADC 0-4095] --> H[Keep last 5 readings<br/>gas_avg = mean]
+        H --> I{gas_avg}
+        I -- "< 2100" --> I1[SAFE, 0]
+        I -- "2100 - 2599" --> I2[WARNING, 1]
+        I -- ">= 2600" --> I3[DANGER, 2]
+        I1 & I2 & I3 --> J[Read MLX90614<br/>body_temp]
+        J --> K{body_temp<br/>>= 32.5 C?}
+        K -- yes --> K1[fever_flag = 1]
+        K -- no --> K0[fever_flag = 0]
+        K1 & K0 --> L[Read BMP280 pressure hPa<br/>altitude = 44330 x 1 - P/1013.25 ^ 1/5.255]
+        L --> M[Read DS3231<br/>ISO timestamp]
+        M --> N[Build JSON packet<br/>print raw vs avg]
+    end
+
+    subgraph SEND["3 - Send and store, then wait 2 s and repeat from 2"]
+        direction LR
+        O{WiFi<br/>connected?} -- yes --> P[HTTP POST<br/>Node-RED /lab4/data]
+        O -- no --> O1[Try reconnect<br/>skip this send]
+        P --> Q[Node-RED: validate fields<br/>DS3231 time as point time]
+        Q --> R[(InfluxDB 2<br/>bucket iot, measurement lab4)]
+        R --> S[Grafana dashboard<br/>refresh 5 s]
+    end
+
+    BOOT --> EDGE
+    EDGE --> SEND

@@ -73,7 +73,7 @@ mpremote reset
 `python3 tools/simulate.py` runs the same edge logic as `main.py` on fake readings. It cycles through SAFE → WARNING → DANGER and normal → fever, and posts to Node-RED as device `simulator`.
 
 ## System Logic
-<img src="docs/flowchart.png" alt="Flowchart" width="420" />
+<img src="docs/flowchart.png" alt="Flowchart" width="1000" />
 
 Every 2 seconds the ESP32 does the following:
 1. **Gas filtering:** reads MQ-5 on the 12-bit ADC (0–4095), keeps the last 5 readings, and computes `gas_avg`.
