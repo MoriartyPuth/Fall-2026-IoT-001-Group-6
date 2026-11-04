@@ -1,0 +1,5 @@
+config.py
+.env
+__pycache__/
+tools/demo/node_modules/
+tools/demo/frames/

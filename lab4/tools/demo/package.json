@@ -1,0 +1,5 @@
+{
+  "name": "lab4-demo-recorder",
+  "private": true,
+  "dependencies": { "puppeteer": "23.11.1" }
+}

@@ -6,3 +6,4 @@ Course repository for IoT Lab Assignments (Group 6).
 - [LAB 1: Temperature Sensor with Relay Control (Telegram)](./lab1/README.md)
 - [LAB 2: Webserver LCD Servo Control](./lab2/README.md)
 - [Lab 3: IoT Smart Gate Control with Blynk, IR Sensor, Servo Motor, and TM163](./lab3/README.md)
+- [Lab 4: Multi-Sensor IoT Monitoring with Grafana Dashboard](./lab4/README.md)
