@@ -120,7 +120,7 @@ In Node-RED, the function node keeps only valid numeric fields and stores `times
 - Else → `fever_flag = 0`
 - Send `fever_flag` to Node-RED.
 ### Evidence
-<img width="1280" height="644" alt="telegram-cloud-photo-size-5-6289736308439586954-y" src="https://github.com/user-attachments/assets/9cfc120e-88df-4402-b401-dc3af844d69f" />
+<img width="1280" height="668" alt="telegram-cloud-photo-size-5-6289736308439586981-y" src="https://github.com/user-attachments/assets/a4d06254-b452-469b-bc15-a965023a86fc" />
 
 
 ## Task 4 : Pressure & Altitude Monitoring (Grafana)
