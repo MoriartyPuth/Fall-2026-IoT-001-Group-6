@@ -103,7 +103,8 @@ In Node-RED, the function node keeps only valid numeric fields and stores `times
 - Print raw and averaged value.
 - Send averaged value to Node-RED.
 ### Evidence
-<img src="evidence/serial_raw_vs_avg.png" alt="Serial monitor raw vs average" width="900" />
+<img width="1280" height="598" alt="telegram-cloud-photo-size-5-6298601189658006641-y" src="https://github.com/user-attachments/assets/309ad451-25b8-43f4-9c70-2fa3c1ca3664" />
+
 
 ## Task 2 : Gas Risk Classification
 - `< 2100` → SAFE
@@ -111,14 +112,16 @@ In Node-RED, the function node keeps only valid numeric fields and stores `times
 - `≥ 2600` → DANGER
 - Send `risk_level` with data packet.
 ### Evidence
-_TODO: screenshot of the WARNING and DANGER states (gas source near the MQ-5)._
+<img width="1280" height="644" alt="telegram-cloud-photo-size-5-6289736308439586954-y" src="https://github.com/user-attachments/assets/1f8798d4-bc77-4d63-9b3c-bb470b38d5c6" />
+
 
 ## Task 3 : Fever Detection Logic
 - If `body_temp ≥ 32.5 °C` → `fever_flag = 1`
 - Else → `fever_flag = 0`
 - Send `fever_flag` to Node-RED.
 ### Evidence
-_TODO: screenshot of normal and fever states (hand / forehead on the MLX90614)._
+<img width="1280" height="644" alt="telegram-cloud-photo-size-5-6289736308439586954-y" src="https://github.com/user-attachments/assets/9cfc120e-88df-4402-b401-dc3af844d69f" />
+
 
 ## Task 4 : Pressure & Altitude Monitoring (Grafana)
 Panels: Gas Average (time series), Risk Level, Body Temperature gauge, Fever Flag, Pressure graph and current hPa, Altitude graph and current m, DS3231 timestamp, Body vs Room temperature.
