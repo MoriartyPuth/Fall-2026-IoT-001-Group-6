@@ -135,4 +135,4 @@ Grafana dashboard:
 <img src="evidence/grafana.png" alt="Grafana dashboard" width="900" />
 
 ## Demo Video
-[Demo video (78 s)](evidence/demo.mp4)
+[Demo video](evidence/demo.mp4)
